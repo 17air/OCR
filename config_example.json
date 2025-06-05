@@ -1,0 +1,5 @@
+{
+    "model_path": "path/to/your/model.tflite",
+    "char_map": "char_map_example.txt",
+    "blank_index": 0
+}
