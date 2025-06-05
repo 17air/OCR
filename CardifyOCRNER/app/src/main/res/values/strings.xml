@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Cardify OCR+NER</string>
+    <string name="select_image">Select Image</string>
+    <string name="capture_photo">Capture Photo</string>
+</resources>
