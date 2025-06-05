@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+set -e
+BASEDIR=$(dirname "$0")
+GRADLE_JAR="$BASEDIR/gradle/wrapper/gradle-wrapper.jar"
+if [ ! -f "$GRADLE_JAR" ]; then
+  echo "Gradle wrapper JAR not found. Please install gradle." >&2
+  exit 1
+fi
+exec java -jar "$GRADLE_JAR" "$@"
