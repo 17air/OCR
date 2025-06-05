@@ -1,6 +1,7 @@
 import numpy as np
 from PIL import Image
 import tensorflow as tf
+from ocr_utils import decode_greedy
 
 
 class OCRModel:
@@ -29,3 +30,8 @@ class OCRModel:
         self.interpreter.invoke()
         output_data = self.interpreter.get_tensor(self.output_details[0]['index'])
         return output_data
+
+    def predict_text(self, image_path: str, char_map, blank_index: int = 0) -> str:
+        """Return the decoded text for an image."""
+        logits = self.predict(image_path)
+        return decode_greedy(logits, char_map, blank_index)
