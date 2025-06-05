@@ -1,0 +1,2 @@
+rootProject.name = "CardifyOCRNER"
+include(":app")
